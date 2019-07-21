@@ -17,7 +17,7 @@ with open('boxoffice.csv', newline='', encoding='utf-8') as f:
         url = f'http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key={key}&movieCd={i}'
         api_data = requests.get(url).json()
 
-        # pprint(api_data)  
+        # pprint(api_data)
         # 주간/주말 박스오피스 데이터 리스트로 가져오기.
         movies = api_data.get('movieInfoResult').get('movieInfo')
         for movie in movies:
